@@ -6,11 +6,6 @@ pipeline {
         PATH = "${env.MAVEN_HOME}\\bin;${env.JAVA_HOME}\\bin;${env.PATH}"
     }
     stages {
-        stage('Print Environment Variables') {
-            steps {
-                bat 'set'
-            }
-        }
         stage('Verify Maven') {
             steps {
                 bat 'mvn -version'
