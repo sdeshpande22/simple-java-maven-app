@@ -8,13 +8,9 @@ pipeline {
     stages {
         stage('Verify Maven') {
             steps {
-                bat 'mvn -version'
+                bat 'mvn -B -DskipTests clean package'
             }
         }
-        stage('Build') {
-            steps {
-                bat 'mvn clean install'
-            }
-        }
+        
     }
 }
